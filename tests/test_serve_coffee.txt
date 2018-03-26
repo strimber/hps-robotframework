@@ -1,13 +1,16 @@
 *** Settings ***
 Documentation
-...  As a coffee lover
-...  I can get coffee from the machine
-...  So I can enjoy the rest of the day
-Resource          keywords.txt
+...  **In order to** enjoy the rest of the day
+...  **As a** coffee lover
+...  **I can** get coffee from the machine
+Default Tags	sprint:1
+
+Resource	keywords.txt
 
 *** Test Cases ***
 
 Simple use
+	[Tags]	priority:high
 	Given the_coffee_machine_is_started
 	When i_take_a_coffee
 	Then coffee_should_be_served
